@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ur">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Candidate Card</title>
+  <style>
+    :root{--bg:#0b0b0b;--panel:#fff;--text:#fff}
+    body{margin:0;font-family: Georgia, 'Times New Roman', Times, serif;background:#f2f2f2}
+    .card{max-width:720px;margin:20px auto;background:var(--panel);box-shadow:0 4px 18px rgba(0,0,0,.15)}
+    .photo-area{padding:30px 20px 10px;text-align:center;background:#fff}
+    .photo-area img{width:240px;height:320px;object-fit:cover;border:6px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+    .info{background:var(--bg);color:var(--text);padding:30px 24px}
+    .row{display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+    .row:last-child{border-bottom:0}
+    .label{font-weight:700;letter-spacing:1px;font-size:18px;width:45%;}
+    .value{text-align:right;width:45%;font-weight:700;font-size:18px}
+    .institute{white-space:pre-line;text-align:right;}
+
+    @media (max-width:600px){
+      .photo-area img{width:160px;height:210px}
+      .label,.value{font-size:16px}
+      .card{margin:10px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="photo-area">
+      <!-- Aapka Base64 Image Added Here -->
+      <img id="photo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD..." alt="candidate photo">
+    </div>
+
+    <div class="info">
+
+      <div class="row">
+        <div class="label">ROLL NO:-</div>
+        <div class="value" id="roll">148249</div>
+      </div>
+
+      <div class="row">
+        <div class="label">CANDIDATE'S NAME:</div>
+        <div class="value" id="name">MUHAMMAD ILYAS</div>
+      </div>
+
+      <div class="row">
+        <div class="label">FATHER'S NAME:</div>
+        <div class="value" id="father">MUHAMMAD IJAZ</div>
+      </div>
+
+      <div class="row">
+        <div class="label">NAME OF INSTITUTE:</div>
+        <div class="value institute" id="institute">IDEAL ENGLISH
+GRAMMAR HIGHER
+SEC SCHOOL</div>
+      </div>
+
+      <div class="row">
+        <div class="label">ENROLLMENT NO:</div>
+        <div class="value" id="enroll">ZUEB/S.S.C/2024/136529</div>
+      </div>
+
+      <div class="row">
+        <div class="label">GROUP:</div>
+        <div class="value" id="group">PRIVATE SCIENCE</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
