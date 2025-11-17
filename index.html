@@ -1,12 +1,40 @@
-<!--
-    File: index.html
-    Use: Open this file in a browser. Click "Change Photo" to select your picture from your device.
-    If you prefer, replace the image in the <img id="photo" src="" alt="candidate photo">
-      <textarea id="base64" placeholder="Paste your Base64 here" style="width:100%; margin-top:10px; height:120px;"></textarea>
-      
+<!doctype html>
+<html lang="ur">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Candidate Card</title>
+  <style>
+    :root{--bg:#0b0b0b;--panel:#fff;--text:#fff}
+    body{margin:0;font-family: Georgia, 'Times New Roman', Times, serif;background:#f2f2f2}
+    .card{max-width:720px;margin:20px auto;background:var(--panel);box-shadow:0 4px 18px rgba(0,0,0,.15)}
+    .photo-area{padding:30px 20px 10px;text-align:center;background:#fff}
+    .photo-area img{width:240px;height:320px;object-fit:cover;border:6px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+    .info{background:var(--bg);color:var(--text);padding:30px 24px}
+    .row{display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+    .row:last-child{border-bottom:0}
+    .label{font-weight:700;letter-spacing:1px;font-size:18px;width:45%;}
+    .value{text-align:right;width:45%;font-weight:700;font-size:18px}
+    .institute{white-space:pre-line;text-align:right;}
+
+    @media (max-width:600px){
+      .photo-area img{width:160px;height:210px}
+      .label,.value{font-size:16px}
+      .card{margin:10px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="photo-area">
+      <!-- Aapka Base64 Image Added Here -->
+      <img id="photo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD..." alt="candidate photo">
     </div>
 
     <div class="info">
+
       <div class="row">
         <div class="label">ROLL NO:-</div>
         <div class="value" id="roll">148249</div>
@@ -24,7 +52,9 @@
 
       <div class="row">
         <div class="label">NAME OF INSTITUTE:</div>
-        <div class="value institute" id="institute">IDEAL ENGLISH\nGRAMMAR HIGHER\nSEC SCHOOL</div>
+        <div class="value institute" id="institute">IDEAL ENGLISH
+GRAMMAR HIGHER
+SEC SCHOOL</div>
       </div>
 
       <div class="row">
@@ -36,25 +66,19 @@
         <div class="label">GROUP:</div>
         <div class="value" id="group">PRIVATE SCIENCE</div>
       </div>
+
+      <div class="row">
+        <div class="label">Date Of Birth:</div>
+        <div class="value" id="group">01-Oct-1999</div>
+      </div>
+
+      <div class="row">
+        <div class="label">Exam Vanue:</div>
+        <div class="value" id="group">P.N.G HIGHER SECONDARY SCHOOL</div>
+      </div>
     </div>
+
   </div>
 
-  <script>
-    // File input preview - when user selects a photo it replaces the image shown.
-    const input = document.getElementById('file');
-    const photo = document.getElementById('photo');
-    input.addEventListener('change', function(){
-      const f = this.files[0];
-      if(!f) return;
-      const reader = new FileReader();
-      reader.onload = function(e){
-        photo.src = e.target.result;
-      }
-      reader.readAsDataURL(f);
-    });
-
-    // If you want to change any text: edit the innerText of elements with ids: roll, name, father, institute, enroll, group
-    // Example to change name via console: document.getElementById('name').innerText = 'Aap ka Naam';
-  </script>
 </body>
 </html>
