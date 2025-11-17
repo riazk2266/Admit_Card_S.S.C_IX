@@ -1,0 +1,60 @@
+<!--
+    File: index.html
+    Use: Open this file in a browser. Click "Change Photo" to select your picture from your device.
+    If you prefer, replace the image in the <img id="photo" src="" alt="candidate photo">
+      <textarea id="base64" placeholder="Paste your Base64 here" style="width:100%; margin-top:10px; height:120px;"></textarea>
+      
+    </div>
+
+    <div class="info">
+      <div class="row">
+        <div class="label">ROLL NO:-</div>
+        <div class="value" id="roll">148249</div>
+      </div>
+
+      <div class="row">
+        <div class="label">CANDIDATE'S NAME:</div>
+        <div class="value" id="name">MUHAMMAD ILYAS</div>
+      </div>
+
+      <div class="row">
+        <div class="label">FATHER'S NAME:</div>
+        <div class="value" id="father">MUHAMMAD IJAZ</div>
+      </div>
+
+      <div class="row">
+        <div class="label">NAME OF INSTITUTE:</div>
+        <div class="value institute" id="institute">IDEAL ENGLISH\nGRAMMAR HIGHER\nSEC SCHOOL</div>
+      </div>
+
+      <div class="row">
+        <div class="label">ENROLLMENT NO:</div>
+        <div class="value" id="enroll">ZUEB/S.S.C/2024/136529</div>
+      </div>
+
+      <div class="row">
+        <div class="label">GROUP:</div>
+        <div class="value" id="group">PRIVATE SCIENCE</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // File input preview - when user selects a photo it replaces the image shown.
+    const input = document.getElementById('file');
+    const photo = document.getElementById('photo');
+    input.addEventListener('change', function(){
+      const f = this.files[0];
+      if(!f) return;
+      const reader = new FileReader();
+      reader.onload = function(e){
+        photo.src = e.target.result;
+      }
+      reader.readAsDataURL(f);
+    });
+
+    // If you want to change any text: edit the innerText of elements with ids: roll, name, father, institute, enroll, group
+    // Example to change name via console: document.getElementById('name').innerText = 'Aap ka Naam';
+  </script>
+</body>
+</html>
